@@ -10,3 +10,9 @@ create the new branch
 
 checkout that new branch
 `git checkout <branchName>`
+
+push that branch back to origin
+`git push origin <name_of_your_new_branch>`
+
+to see your branches
+`git branch`
