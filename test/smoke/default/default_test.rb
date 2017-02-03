@@ -21,5 +21,9 @@ end
 
 describe file('/var/website/builder.txt') do
   it { should exist }
-  its('content') { should match /Annie built this/ }
+  its('content') { should match /Test Kitchen built this/ }
+end
+
+describe file('/var/website/cheflogo.jpg') do
+  it { should exist }
 end
