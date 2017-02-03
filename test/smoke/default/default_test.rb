@@ -18,3 +18,8 @@ describe file('/var/website/directions.txt') do
   it { should exist }
   its('content') { should match /website goes here/ }
 end
+
+describe file('/var/website/builder.txt') do
+  it { should exist }
+  its('content') { should match /Annie built this/ }
+end
