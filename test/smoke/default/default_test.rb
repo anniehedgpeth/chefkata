@@ -13,3 +13,8 @@ end
 describe directory('/var/old-website') do
   it { should_not exist }
 end
+
+describe file('/var/website/directions.txt') do
+  it { should exist }
+  its('content') { should match /website goes here/ }
+end
