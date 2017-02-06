@@ -27,3 +27,11 @@ end
 describe file('/var/website/cheflogo.jpg') do
   it { should exist }
 end
+
+describe file('/var/website/command.txt') do
+  it { should exist }
+end
+
+describe directory('/var/website/architect') do
+  it { should exist }
+end
