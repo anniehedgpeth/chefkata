@@ -29,3 +29,11 @@ describe file('/var/website/builder.txt') do
   its('content') { should eq 'Test Kitchen built this' }
 end
 
+describe file('/var/website/logo.jpg') do
+  it { should exist }
+end
+
+describe file('/var/website/command.txt') do
+  it { should exist }
+  its('content') { should match 'ran command' }
+end
