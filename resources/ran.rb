@@ -1,4 +1,4 @@
-resource :my_website
+resource_name :my_website
 property :git_repo, String, default: 'https://github.com/pages-themes/architect.git', name_property: true
 
 action :create do
@@ -7,7 +7,8 @@ action :create do
     not_if { ::File.exist?('/var/website/command.txt') }
   end
 
-  git '/var/website/architect' do
+  git 'architect' do
+    destination '/var/website/architect'
     repository 'https://github.com/pages-themes/architect.git'
     action :nothing
     subscribes :sync, 'execute[ran]', :immediately
