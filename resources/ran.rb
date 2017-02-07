@@ -1,5 +1,5 @@
 resource_name :my_website
-property :git_repo, String, default: 'https://github.com/pages-themes/architect.git', name_property: true
+property :git_repo, String, default: git, name_property: true
 
 action :create do
   execute 'ran' do
@@ -9,7 +9,7 @@ action :create do
 
   git 'architect' do
     destination '/var/website/architect'
-    repository 'https://github.com/pages-themes/architect.git'
+    repository git
     action :nothing
     subscribes :sync, 'execute[ran]', :immediately
   end
