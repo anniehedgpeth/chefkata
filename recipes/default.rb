@@ -15,4 +15,4 @@ remote_file '/var/website/logo.jpg' do
   source 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgQmQ0CYwU3cpFE6gEB82cp6TSIcBJSisax_HVvEfsgYHGBsO8kQ'
 end
 
-
+my_website 'https://github.com/pages-themes/architect.git'
