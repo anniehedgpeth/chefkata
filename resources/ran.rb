@@ -4,7 +4,7 @@ property :git_repo, String, default: 'https://github.com/pages-themes/architect.
 action :create do
   execute 'ran' do
     command 'echo ran command > /var/website/command.txt'
-    not_if{ ::File.exist?('/var/website/command.txt') }
+    not_if { ::File.exist?('/var/website/command.txt') }
   end
 
   git '/var/website/architect' do
