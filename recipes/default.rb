@@ -1,5 +1,12 @@
-#
-# Cookbook:: chefkata
-# Recipe:: default
-#
-# Copyright:: 2017, The Authors, All Rights Reserved.
+include_recipe 'ubuntu'
+include_recipe 'nano'
+
+directory '/var/website'
+
+file '/var/website/directions.txt' do
+  content 'website goes here'
+end
+
+file '/var/website/builder.txt' do
+  content "#{node['chefkata']['builder']} built this"
+end
