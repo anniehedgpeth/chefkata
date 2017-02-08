@@ -1,9 +1,12 @@
 include_recipe 'ubuntu'
 include_recipe 'nano'
 
-directory '/var/website'
+directory 'website' do
+  path '/var/website'
+end
 
-file '/var/website/directions.txt' do
+file 'directions' do
+  path '/var/website/directions.txt'
   content 'website goes here'
 end
 
