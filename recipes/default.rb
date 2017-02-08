@@ -14,14 +14,3 @@ end
 remote_file '/var/website/logo.jpg' do
   source 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgQmQ0CYwU3cpFE6gEB82cp6TSIcBJSisax_HVvEfsgYHGBsO8kQ'
 end
-
-execute 'ran' do
-  command ' echo ran command > /var/website/command.txt'
-  not_if { ::File.exist?('/var/website/command.txt') }
-end
-
-git '/var/website/architect' do
-  repository 'https://github.com/pages-themes/architect'
-  action :nothing
-  subscribes :sync, 'execute[ran]', :immediately
-end
