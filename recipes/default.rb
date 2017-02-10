@@ -18,5 +18,4 @@ remote_file '/var/website/logo.jpg' do
   source 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgQmQ0CYwU3cpFE6gEB82cp6TSIcBJSisax_HVvEfsgYHGBsO8kQ'
 end
 
-chefkata "#{node['chefkata']['gitrepo']}"
-
+chefkata node['chefkata']['gitrepo']
