@@ -1,2 +1,2 @@
 default['chefkata']['builder'] = 'Annie'
-default['chefkata']['git'] = 'https://github.com/pages-themes/architect'
+default['chefkata']['gitrepo'] = 'https://github.com/mhedgpeth/chef-by-example.git'
