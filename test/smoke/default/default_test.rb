@@ -38,47 +38,19 @@ describe file('/var/website/command.txt') do
   its('content') { should match 'ran command' }
 end
 
-describe directory('/var/website/architect') do
+describe directory('/var/website/chefkata') do
   it { should exist }
   it { should be_directory }
 end
 
-describe directory('/var/website/architect/_layouts') do
-  it { should exist }
-  it { should be_directory }
-end
-
-describe directory('/var/website/architect/_sass') do
-  it { should exist }
-  it { should be_directory }
-end
-
-describe directory('/var/website/architect/assets') do
-  it { should exist }
-  it { should be_directory }
-end
-
-describe directory('/var/website/architect/script') do
-  it { should exist }
-  it { should be_directory }
-end
-
-describe file('/var/website/architect/Gemfile') do
+describe file('/var/website/chefkata/README.md') do
   it { should exist }
   it { should be_file }
+  its('content') { should match 'Introduction' }
 end
 
-describe directory('/var/website/architect/_config.yml') do
+describe file('/var/website/chefkata/LICENSE') do
   it { should exist }
   it { should be_file }
-end
-
-describe directory('/var/website/architect/jekyll-theme-architect.gemspec') do
-  it { should exist }
-  it { should be_file }
-end
-
-describe directory('/var/website/architect/thumbnail.png') do
-  it { should exist }
-  it { should be_file }
+  its('content') { should match 'Apache License' }
 end
