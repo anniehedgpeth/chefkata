@@ -10,8 +10,11 @@ file '/var/website/builder.txt' do
   content "#{node['chefkata']['builder']} built this"
 end
 
-git '/var/website/arch' do
-  repository "#{node['chefkata']['archrepo']}"
-  action :sync
-  not_if { ::File.exist?('/var/website/arch') }
+remote_file '/var/website/logo.jpg' do
+  source 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgQmQ0CYwU3cpFE6gEB82cp6TSIcBJSisax_HVvEfsgYHGBsO8kQ'
 end
+
+ran_archrepo 'clonelink' do
+  clonelink 'https://github.com/pages-themes/architect.git'
+end
+
