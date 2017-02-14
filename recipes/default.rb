@@ -19,5 +19,3 @@ remote_file '/var/website/logo.jpg' do
 end
 
 chefkata node['chefkata']['gitrepo']
-
-Logger.log '************' #don't understand Log yet
