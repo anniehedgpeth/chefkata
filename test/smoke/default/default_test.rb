@@ -29,3 +29,12 @@ describe file('/var/website/command.txt') do
   it { should exist }
   its('content') { should match 'ran command' }
 end
+
+describe directory('/var/website/chef-by-example') do
+  it { should exist }
+end
+
+describe file('/var/website/chef-by-example/README.md') do
+  it { should exist }
+  its('content') { should match 'Learning Chef can be difficult with real world examples' }
+end
