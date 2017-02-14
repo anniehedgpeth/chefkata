@@ -18,3 +18,9 @@ ran_archrepo 'clonelink' do
   clonelink 'https://github.com/pages-themes/architect.git'
 end
 
+message = data_bag_item('website', 'message')
+welcome = message['welcomeMessage']
+
+file '/var/website/welcome.txt' do
+  content welcome
+end
