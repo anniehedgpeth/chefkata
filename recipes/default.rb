@@ -16,10 +16,11 @@ end
 
 repo_resource 'https://github.com/pages-themes/architect.git'
 
+# Can call it either way
+# message = data_bag_item('website', 'messages')['welcomeMessage']
+
 messages = data_bag_item('website', 'messages')
 message = messages['welcomeMessage']
-
-# message = data_bag_item('website', 'messages')['welcomeMessage']
 
 file '/var/website/welcome.txt' do
   content message
