@@ -40,5 +40,10 @@ end
 
 describe file('/var/website/command.txt') do
   it { should exist }
-  its('content') {should match 'ran command' }
+  its('content') { should match 'ran command' }
+end
+
+describe file('/var/website/welcome.txt') do
+  it { should exist }
+  its('content') { should match 'Welcome to Chef Learning!' }
 end
