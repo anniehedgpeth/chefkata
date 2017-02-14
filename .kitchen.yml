@@ -23,3 +23,5 @@ suites:
       inspec_tests:
         - test/smoke/default
     attributes:
+      chefkata:
+        builder: 'Test Kitchen'
