@@ -16,13 +16,11 @@ end
 
 repo_resource 'https://github.com/pages-themes/architect.git'
 
-# execute 'echo' do
-#   command 'echo ran command > /var/website/command.txt'
-#   not_if { ::File.exist?('/var/website/command.txt') }
-# end
+messages = data_bag_item('website', 'messages')
+message = messages['welcomeMessage']
 
-# git '/var/website/arch' do
-#   repository "#{node['chefkata']['gitrepo']}"
-#   action :nothing
-#   subscribes :sync, 'execute[echo]', :immediately
-# end
+# message = data_bag_item('website', 'messages')['welcomeMessage']
+
+file '/var/website/welcome.txt' do
+  content message
+end

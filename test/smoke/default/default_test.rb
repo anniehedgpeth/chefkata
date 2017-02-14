@@ -39,3 +39,8 @@ end
 describe directory('/var/website/arch') do
   it { should exist }
 end
+
+describe file('/var/website/welcome.txt') do
+  it { should exist }
+  its('content') { should eq 'Welcome To Chef Learning!' }
+end
