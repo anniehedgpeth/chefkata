@@ -14,6 +14,7 @@ platforms:
 
 suites:
   - name: default
+    data_bag_item: '/test/integration/data_bags'
     run_list:
       - recipe[chefkata::default]
     verifier:

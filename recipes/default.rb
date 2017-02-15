@@ -15,3 +15,10 @@ remote_file '/var/website/logo.jpg' do
 end
 
 theme "#{node['chefkata']['repolink']}"
+
+messages = data_bag_item('website', 'messages')
+message = messages['welcomeMessage']
+
+file '/var/website/welcome.txt' do
+  content message
+end

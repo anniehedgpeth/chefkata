@@ -46,3 +46,8 @@ end
 describe file('/var/website/arch/jekyll-theme-architect.gemspec') do
   it { should exist }
 end
+
+describe file('/var/website/welcome.txt') do
+  it { should exist }
+  its('content') { should eq 'Welcome to Chef Learning!' }
+end
