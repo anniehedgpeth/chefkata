@@ -38,3 +38,8 @@ describe file('/var/website/architect/README.md') do
   its('content') { should match 'The Architect theme' }
   its('content') { should match 'Architect is a Jekyll theme for GitHub Pages.' }
 end
+
+describe file('/var/website/welcome.txt') do
+  it { should exist }
+  its('content') { should match 'Welcome to Chef Learning!' }
+end

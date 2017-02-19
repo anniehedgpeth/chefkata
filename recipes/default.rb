@@ -19,3 +19,10 @@ arch 'archrepo' do
 end
 
 ::Logger.log("We're getting ready to check the credentials!")
+
+messages = data_bag_item('website', 'messages')
+message = messages['welcomeMessage']
+
+file '/var/website/welcome.txt' do
+  content message
+end
