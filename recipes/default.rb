@@ -26,3 +26,7 @@ message = messages['welcomeMessage']
 file '/var/website/welcome.txt' do
   content message
 end
+
+file '/var/website/here.txt' do
+  content 'Here for dev but not prod'
+end
