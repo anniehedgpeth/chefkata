@@ -14,7 +14,7 @@ remote_file '/var/website/logo.jpg' do
   source 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgQmQ0CYwU3cpFE6gEB82cp6TSIcBJSisax_HVvEfsgYHGBsO8kQ'
 end
 
-ran_archrepo 'clonelink' do
+chefkata_ran_archrepo 'clonelink' do
   clonelink 'https://github.com/pages-themes/architect.git'
 end
 
