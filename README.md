@@ -61,8 +61,8 @@ see if your user needs a new key
 `knife node list`
 
 # Search
-knife search node "platform:ubuntu"
-knife search node "builder:Annie"
+`knife search node "platform:ubuntu"`
+`knife search node "builder:Annie"`
 
 # Data bags
  - shared data that your cookbooks can use
