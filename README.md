@@ -1,21 +1,20 @@
-# chefkata
+**If you're following along with me, feel free to fork this repo from the master branch to have a repo of your own off of which to branch.**
 
-Working through a tutorial developed by [Michael Hedgpeth](https://github.com/mhedgpeth/chef-by-example) and branching daily to learn. I'm tracking my steps in my [workflow repo](https://github.com/anniehedgpeth/workflow).
+I'm working through a tutorial developed by [Michael Hedgpeth](https://github.com/mhedgpeth/chef-by-example) and branching daily to learn. Go to his repo for the kata steps.
 
 # Create a new repo for today's kata (or just branch the repo)
- - from code/chef/work create a new repo `chef generate repo chefkata4`
- - create /code/chef/work/chefkata4/.chef and copy the user pem inside the .chef directory
+ - from code/chef/work create a new repo `chef generate repo chefkata<#>`
+ - create /code/chef/work/chefkata<#>/.chef and copy the user pem inside the .chef directory
  - generate knife.rb "generate knife config" for that org to put in .chef folder, too
 
 # Create a new cookbook branch
- - from code/chef/work/chefkata4/cookbooks `git clone https://github.com/anniehedgpeth/chefkata.git`
- - from code/chef/work/chefkata4/cookbooks/chefkata create a branch, name it, and switch to it  `git checkout -b <branch-name>`
+ - from code/chef/work/chefkata<#>/cookbooks `git clone https://github.com/anniehedgpeth/chefkata.git`
+ - from code/chef/work/chefkata<#>/cookbooks/chefkata create a branch, name it, and switch to it  `git checkout -b <branch-name>`
  
 # Add the second cookbook for the runlist
  - add the ubuntu cookbook to that cookbooks directory and make sure it converges `git clone https://github.com/anniehedgpeth/ubuntu-14-hardening.git`
 `berks install`
 `berks upload`
-
 
 Any time I change the cookbook, from that cookbook’s directory, I need to:
  - bump the version in `metadata.rb` or it won't upload the new one
@@ -25,9 +24,9 @@ Any time I change the cookbook, from that cookbook’s directory, I need to:
 
 # To bootstrap a new machine:
 
-`knife bootstrap chefkata8.southcentralus.cloudapp.azure.com -N chefkata8 -r 'recipe[chefkata::default], recipe[ubuntu-14-hardening::default]' --ssh-user annie --sudo`
+`knife bootstrap chefkata<#>.southcentralus.cloudapp.azure.com -N chefkata<#> -r 'recipe[chefkata::default], recipe[ubuntu-14-hardening::default]' --ssh-user annie --sudo`
 
-`knife bootstrap production8.southcentralus.cloudapp.azure.com -N chefkata8prod -r 'recipe[chefkata::default], recipe[ubuntu-14-hardening::default]' -E 'prod' --ssh-user annie --sudo`
+`knife bootstrap production8.southcentralus.cloudapp.azure.com -N chefkata<#>prod -r 'recipe[chefkata::default], recipe[ubuntu-14-hardening::default]' -E 'prod' --ssh-user annie --sudo`
 
 # To converge on that node from here on out:
 
@@ -36,21 +35,21 @@ run `sudo chef-client` in an ssh session
 # To validate with InSpec Profile
 First you have to add your private key to the local ssh (I don't know if it matters which directory you're in.)
 `ssh-add`
-`ssh annie@chefkata8.southcentralus.cloudapp.azure.com`
-`inspec exec https://github.com/anniehedgpeth/chefkata_inspec -t ssh://annie@chefkata8.southcentralus.cloudapp.azure.com`
-`inspec exec https://github.com/anniehedgpeth/chefkata_inspec -t ssh://annie@production8.southcentralus.cloudapp.azure.com`
+`ssh annie@chefkata<#>.southcentralus.cloudapp.azure.com`
+`inspec exec https://github.com/anniehedgpeth/chefkata_inspec -t ssh://annie@chefkata<#>.southcentralus.cloudapp.azure.com`
+`inspec exec https://github.com/anniehedgpeth/chefkata_inspec -t ssh://annie@production<#>.southcentralus.cloudapp.azure.com`
 
 # To add run-list:
 
-`knife node run_list set chefkata2 'recipe[chefkata::default]'`
+`knife node run_list set chefkata<#> 'recipe[chefkata::default]'`
 
 # To edit the run-list:
- - `knife node show chefkata6`
+ - `knife node show chefkata<#>`
  - make sure the cookbook is uploaded
  - make sure it has a `Berksfile`
  - `berks install`
  - `berks upload`
- - `knife node run_list add chefkata2 'ubuntu-14-hardening'`
+ - `knife node run_list add chefkata<#> 'ubuntu-14-hardening'`
 
 # When adding an organization to manage.chef.io
  - add the org
@@ -107,7 +106,7 @@ Roles function just like data bags in the sense that they're sibling to the cook
  - to check 
  `knife role list`
  - to add the role to the runlist
- `knife node run_list add chefkata7 'role[security]'`
+ `knife node run_list add chefkata<#> 'role[security]'`
 
 ## Environments
 `knife environment create ENVIRONMENT_NAME -d DESCRIPTION`
