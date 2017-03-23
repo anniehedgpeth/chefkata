@@ -1,6 +1,6 @@
 **If you're following along with me, feel free to fork this repo from the master branch to have a repo of your own off of which to branch.**
 
-I'm working through a tutorial developed by [Michael Hedgpeth](https://github.com/mhedgpeth/chef-by-example) and branching daily to learn. Go to his repo for the kata steps.
+I'm working through a tutorial developed by [Michael Hedgpeth](https://github.com/mhedgpeth/chef-by-example/blob/master/basic-chef-fluency.md) and branching daily to learn. Go to his repo for the kata steps.
 
 # Create a new repo for today's kata (or just branch the repo)
  - from code/chef/work create a new repo `chef generate repo chefkata<#>`
