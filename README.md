@@ -2,6 +2,8 @@
 
 I'm working through a tutorial developed by [Michael Hedgpeth](https://github.com/mhedgpeth/chef-by-example/blob/master/basic-chef-fluency.md) and branching daily to learn. Go to his repo for the kata steps.
 
+Please see the associated study guide for the Basic Chef Fluency Badge in the `basic-chef-fluency.md` file.
+
 # Create a new repo for today's kata (or just branch the repo)
  - from code/chef/work create a new repo `chef generate repo chefkata<#>`
  - create /code/chef/work/chefkata<#>/.chef and copy the user pem inside the .chef directory
