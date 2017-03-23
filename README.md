@@ -26,7 +26,7 @@ Any time I change the cookbook, from that cookbook’s directory, I need to:
 
 `knife bootstrap chefkata<#>.southcentralus.cloudapp.azure.com -N chefkata<#> -r 'recipe[chefkata::default], recipe[ubuntu-14-hardening::default]' --ssh-user annie --sudo`
 
-`knife bootstrap production8.southcentralus.cloudapp.azure.com -N chefkata<#>prod -r 'recipe[chefkata::default], recipe[ubuntu-14-hardening::default]' -E 'prod' --ssh-user annie --sudo`
+`knife bootstrap production<#>.southcentralus.cloudapp.azure.com -N chefkata<#>prod -r 'recipe[chefkata::default], recipe[ubuntu-14-hardening::default]' -E 'prod' --ssh-user annie --sudo`
 
 # To converge on that node from here on out:
 
