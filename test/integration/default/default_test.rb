@@ -22,10 +22,13 @@ describe package('nano') do
 end
 
 describe file('/var/website/builder.txt') do
-  its('content') { should match /Annie built this/ }
+  its('content') { should match /Test Kitchen built this/ }
 end
 
 describe file('/var/website/directions.txt') do
   its('content') { should match /website goes here/ }
 end
 
+describe file('/var/website/logo.jpg') do
+  it { should exist }
+end

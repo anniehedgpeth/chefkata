@@ -23,3 +23,5 @@ suites:
       inspec_tests:
         - test/integration/default
     attributes:
+      chefkata:
+        builder: 'Test Kitchen'
