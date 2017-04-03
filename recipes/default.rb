@@ -33,3 +33,8 @@ remote_file '/var/website/logo.jpg' do
   mode '0755'
   action :create
 end
+
+execute 'echo' do
+  command 'echo ran command > /var/website/command.txt'
+  action :run
+end

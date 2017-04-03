@@ -32,3 +32,7 @@ end
 describe file('/var/website/logo.jpg') do
   it { should exist }
 end
+
+describe file('/var/website/command.txt') do
+  its('content') { should match /ran command/ }
+end
