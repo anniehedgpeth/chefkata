@@ -22,7 +22,7 @@ suites:
       - recipe[chefkata::default]
     verifier:
       inspec_tests:
-        - test/smoke/default
+        - test/integration/default
     attributes:
       chefkata:
         builder: 'Test Kitchen'
