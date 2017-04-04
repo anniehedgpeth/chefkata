@@ -34,15 +34,7 @@ remote_file '/var/website/logo.jpg' do
   action :create
 end
 
-execute 'echo' do
-  command 'echo ran command > /var/website/command.txt'
-  action :run
-  not_if { ::File.exist?('/var/website/command.txt') }
-  notifies :sync, 'git[/var/website/architect]', :immediately
-end
-
-git '/var/website/architect' do
-  repository 'https://github.com/pages-themes/architect.git'
-  action :nothing
+architect_repo 'git_link' do
+  git_link 'https://github.com/pages-themes/architect.git'
 end
 

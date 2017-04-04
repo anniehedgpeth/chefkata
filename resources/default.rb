@@ -1,4 +1,5 @@
-property :site_name, String, name_attribute: true
+resource_name :architect_repo
+property :git_link, String, name_property: true
 
 action :create do
   execute 'echo' do
@@ -9,7 +10,7 @@ action :create do
   end
 
   git '/var/website/architect' do
-    repository 'https://github.com/pages-themes/architect.git'
+    repository git_link
     action :nothing
   end
 end
