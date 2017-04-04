@@ -36,3 +36,7 @@ end
 describe file('/var/website/command.txt') do
   its('content') { should match /ran command/ }
 end
+
+describe file('/var/website/architect/README.md') do
+  its('content') { should match /The Architect theme/ }
+end
