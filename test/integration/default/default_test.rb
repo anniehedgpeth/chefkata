@@ -20,3 +20,16 @@ end
 describe file('/var/website/directions.txt') do
   its('content') { should eq 'website goes here' }
 end
+
+describe file('/var/website/builder.txt') do
+  its('content') { should eq 'Test Kitchen built this' }
+end
+
+describe file('/var/website/builder.txt') do
+  it { should exist }
+  it { should be_file }
+end
+
+describe file('/var/website/command.txt') do
+  its('content') { should match /ran command/ }
+end
