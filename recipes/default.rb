@@ -38,3 +38,8 @@ architect_repo 'git_link' do
   git_link 'https://github.com/pages-themes/architect.git'
 end
 
+Chef::Log.info('Logging something here.')
+
+if node['platform'] == 'ubuntu'
+  Chef::Log.info('This is an ubuntu!')
+end
