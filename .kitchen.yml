@@ -17,9 +17,12 @@ platforms:
 
 suites:
   - name: default
+    data_bags_path: test/integration/data_bags
     run_list:
       - recipe[chefkata::default]
     verifier:
       inspec_tests:
         - test/integration/default
     attributes:
+      chefkata:
+        builder: Test Kitchen
