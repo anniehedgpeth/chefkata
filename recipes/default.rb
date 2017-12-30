@@ -31,6 +31,7 @@ architect_repo 'git' do
 end
 
 website_message = data_bag_item('website', 'message')
+message = website_message['message']
 file '/var/website/welcome.txt' do
-  content "#{website_message}"
+  content message
 end

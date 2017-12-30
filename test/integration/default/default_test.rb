@@ -37,6 +37,6 @@ describe file('/var/website/architect') do
   it { should exist }
 end
 
-describe file('/var/website/message.txt') do
+describe file('/var/website/welcome.txt') do
   its('content') { should match(/Welcome to the BEST Chef learning EVER!!!/) }
 end
